@@ -26,7 +26,9 @@ export default function SignupPage() {
     setSubmit(true);
     try {
       axios.post("/api/signup", authDetails);
-      router.push("/");
+      setTimeout(() => {
+        router.push("/");
+      }, 1000);
     } catch (error: any) {
       toast.error(error.response.data.message);
       setSubmit(false);
